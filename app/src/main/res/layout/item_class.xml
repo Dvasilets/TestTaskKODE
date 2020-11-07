@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="24dp"
+    android:layout_marginVertical="32dp"
+    app:cardCornerRadius="24dp"
+
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/class_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/right_bottom_black">
+
+        <ImageView
+            android:id="@+id/class_icon"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_baseline_menu_book_24"
+            android:background="@drawable/class_icon_background"
+            android:padding="16dp"
+            android:contentDescription="This is class icon"
+            />
+
+        <TextView
+            android:id="@+id/class_name"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/class_icon"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="34dp"
+            />
+
+        <TextView
+            android:textColor="#515563"
+            android:layout_marginStart="8dp"
+            android:id="@+id/class_timeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="34dp"
+            app:layout_constraintStart_toEndOf="@id/class_icon"
+            app:drawableStartCompat="@drawable/ic_baseline_access_time_24" />
+        <TextView
+            android:textColor="#515563"
+            android:id="@+id/dash"
+            android:text="@string/dash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="34dp"
+            app:layout_constraintStart_toEndOf="@id/class_timeStart"
+            />
+        <TextView
+            android:textColor="#515563"
+            android:id="@+id/class_timeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="34dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dash"
+            />
+
+        <ImageView
+            android:id="@+id/image_button"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:background="@drawable/item_button_background"
+            android:src="@drawable/item_button_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            style="?android:attr/borderlessButtonStyle"/>
+        <TextView
+            android:id="@+id/open_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/image_button"
+            app:layout_constraintTop_toTopOf="@id/image_button"
+            app:layout_constraintBottom_toBottomOf="@id/image_button"
+            app:layout_constraintStart_toStartOf="@id/image_button"
+            android:rotation="90"
+            android:text="@string/open_in"
+            android:textColor="@color/white"
+            app:drawableEndCompat="@drawable/ic_baseline_videocam_24"
+            android:drawablePadding="4dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
