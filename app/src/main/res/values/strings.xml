@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TestTaskKODE</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_classes">Classes</string>
     <string name="title_notifications">Notifications</string>
     <string name="double_dots">:</string>
     <string name="days">Days</string>
@@ -10,5 +10,7 @@
     <string name="are_u_rdy">Are you ready for exams?</string>
     <string name="open_in">Open in</string>
     <string name="dash"> - </string>
+    <string name="username">Mike</string>
+    <string name="homework">Homework</string>
 
 </resources>

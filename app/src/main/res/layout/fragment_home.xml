@@ -5,8 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    tools:context=".ui.home.HomeFragment">
-<androidx.constraintlayout.widget.ConstraintLayout
+    tools:context=".ui.fragments.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="64dp"
+            >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_marginHorizontal="24dp"
     android:layout_marginTop="16dp"
     android:layout_marginBottom="32dp"
@@ -204,17 +214,77 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+       android:id="@+id/classes_tv"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/timer_layout"
+        app:layout_constraintBottom_toTopOf="@id/classes_rv"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/title_classes"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/amount_of_classes_tv"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/timer_layout"
+        app:layout_constraintBottom_toBottomOf="@id/classes_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        android:textColor="#484e59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/classes_rv"
         android:clipToPadding="false"
         android:paddingVertical="8dp"
-        app:layout_constraintTop_toBottomOf="@id/timer_layout"
+        app:layout_constraintTop_toBottomOf="@id/classes_tv"
         app:layout_constraintStart_toStartOf="parent"
       >
+
+
     </androidx.recyclerview.widget.RecyclerView>
 
+            <TextView
+                android:text="@string/homework"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:id="@+id/homework_tv"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/classes_rv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/homework_rv"
+                android:clipToPadding="false"
+                android:paddingVertical="8dp"
+                app:layout_constraintTop_toBottomOf="@id/homework_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

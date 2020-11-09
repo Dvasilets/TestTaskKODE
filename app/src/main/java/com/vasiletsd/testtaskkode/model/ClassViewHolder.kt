@@ -17,19 +17,21 @@ class ClassViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var timeEnd : TextView? = null
     private var skypeImage : ImageView? = null
     private var skypeText : TextView? = null
+    private var timeStartOutside : TextView? = null
+    private var timeEndOutside : TextView? = null
 
 
     init {
         className = itemView.findViewById(R.id.class_name)
-      //  teachersLastName = itemView.findViewById(R.id.)
-      //  teachersSex = itemView.findViewById(R.id.)
-      //  description = itemView.findViewById(R.id.)
+        teachersLastName = itemView.findViewById(R.id.teacher_lastname_tv)
+        teachersSex = itemView.findViewById(R.id.teacher_sex_tv)
+        description = itemView.findViewById(R.id.class_description_tv)
         timeStart = itemView.findViewById(R.id.class_timeStart)
         timeEnd = itemView.findViewById(R.id.class_timeEnd)
         skypeImage = itemView.findViewById(R.id.image_button)
         skypeText = itemView.findViewById(R.id.open_in_text)
-
-
+        timeStartOutside = itemView.findViewById(R.id.timeStart_outside)
+        timeEndOutside = itemView.findViewById(R.id.timeEnd_outside)
     }
 
     fun bind(item: Class) {
@@ -38,6 +40,11 @@ class ClassViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val dateEndString = SimpleDateFormat("HH:mm").format(item.timeEnd)
         timeStart?.text = dateStartString
         timeEnd?.text = dateEndString
+        teachersLastName?.text = item.teachersLastName
+        teachersSex?.text = item.teachersSex
+        description?.text = item.description
+        timeStartOutside?.text = dateStartString
+        timeEndOutside?.text = dateEndString
     }
 
 }

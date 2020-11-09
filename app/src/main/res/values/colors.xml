@@ -11,10 +11,11 @@
     <color name="right_bottom_black">#25282E</color>
     <color name="center_black">#25282F</color>
     <color name="nav_drawer_item_color_light_green">#1EC295</color>
+    <color name="light_class_icon_background">#75ffc1</color>
     <color name="nav_drawer_item_ripple_color_green">#0b6d53</color>
     <color name="background_color">#1c1c21</color>
     <color name="action_bar_color">#25282E</color>
-    <color name="light_gray_for_item_background">#343840</color>
+    <color name="light_gray_for_item_background">#4a505b</color>
 
 
 

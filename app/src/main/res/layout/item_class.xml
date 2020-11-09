@@ -1,33 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="24dp"
-    android:layout_marginVertical="32dp"
-    app:cardCornerRadius="24dp"
-
-
+    android:layout_marginVertical="4dp"
+    android:id="@+id/rv_item_layout"
     >
+
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/timeStart_outside"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@id/rv_item_layout"
+        app:layout_constraintTop_toTopOf="@id/rv_item_layout"
+        app:layout_constraintBottom_toTopOf="@id/class_card"
+        android:layout_marginBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:layout_marginStart="4dp"
+        android:text="@string/dash"
+        android:id="@+id/dash_outside"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/timeStart_outside"
+        app:layout_constraintTop_toTopOf="@id/rv_item_layout"
+        app:layout_constraintBottom_toTopOf="@id/class_card"
+        android:layout_marginBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="18sp"
+        android:id="@+id/timeEnd_outside"
+        android:textColor="@color/white"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@id/dash_outside"
+        app:layout_constraintTop_toTopOf="@id/rv_item_layout"
+        app:layout_constraintBottom_toTopOf="@id/class_card"
+        android:layout_marginBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/class_card"
+        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/right_bottom_black">
+        android:background="@drawable/item_class_background">
 
         <ImageView
             android:id="@+id/class_icon"
             android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
             android:layout_marginStart="32dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:src="@drawable/ic_baseline_menu_book_24"
-            android:background="@drawable/class_icon_background"
+            android:src="@drawable/ic_baseline_menu_book_24_white"
+            android:background="@drawable/class_icon_background_dark"
             android:padding="16dp"
             android:contentDescription="This is class icon"
             />
@@ -38,31 +75,40 @@
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@id/class_icon"
             app:layout_constraintStart_toEndOf="@id/class_icon"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="4dp"
             />
-
+        <TextView
+            android:id="@+id/crutch_tv"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/class_icon"
+            android:layout_marginTop="52dp"
+            android:layout_marginBottom="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <TextView
             android:textColor="#515563"
             android:layout_marginStart="8dp"
             android:id="@+id/class_timeStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="34dp"
+            app:layout_constraintBottom_toBottomOf="@id/class_icon"
+            android:layout_marginBottom="4dp"
             app:layout_constraintStart_toEndOf="@id/class_icon"
-            app:drawableStartCompat="@drawable/ic_baseline_access_time_24" />
+            app:drawableStartCompat="@drawable/ic_baseline_access_time_24_dark"
+            android:drawablePadding="2dp"/>
         <TextView
             android:textColor="#515563"
             android:id="@+id/dash"
             android:text="@string/dash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/class_icon"
             android:layout_marginStart="4dp"
-            android:layout_marginBottom="34dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintStart_toEndOf="@id/class_timeStart"
             />
         <TextView
@@ -71,8 +117,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginBottom="34dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@id/class_icon"
             app:layout_constraintStart_toEndOf="@id/dash"
             />
 
@@ -101,5 +147,41 @@
             android:drawablePadding="4dp"/>
 
 
+        <TextView
+            android:textColor="#515563"
+            android:layout_marginStart="8dp"
+            android:id="@+id/teacher_sex_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toEndOf="@id/class_icon"
+            app:layout_constraintBottom_toBottomOf="@id/class_icon"/>
+
+        <TextView
+            android:textColor="#515563"
+            android:id="@+id/teacher_lastname_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/class_icon"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toEndOf="@id/teacher_sex_tv"
+            />
+        <TextView
+            android:layout_marginTop="12dp"
+            android:id="@+id/class_description_tv"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/class_icon"
+            app:layout_constraintStart_toStartOf="@id/class_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="128dp"
+            android:layout_marginBottom="32dp"/>
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
